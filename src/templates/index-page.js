@@ -5,6 +5,7 @@ import { RiArrowRightSLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
+import CountdownTimer from "../components/countdown-timer"
 import SEO from "../components/seo"
 
 export const pageQuery = graphql`
@@ -17,7 +18,7 @@ export const pageQuery = graphql`
         tagline
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 480, maxHeight: 380, quality: 80, srcSetBreakpoints: [960, 1440]) {
+            fluid(maxWidth: 480, maxHeight: 380, quality: 100, srcSetBreakpoints: [960, 1440]) {
               ...GatsbyImageSharpFluid
             }
             sizes {
@@ -58,7 +59,8 @@ const HomePage = ({ data }) => {
           ) : ""}
         </div>
       </div>
-      <BlogListHome/>
+      <CountdownTimer />
+      {/* <BlogListHome /> */}
 		</Layout>
 	)
 }

@@ -194,6 +194,23 @@
 		}
 	}
 }
+.countdown {
+	text-align: center;
+	font-size: 5em;
+
+	.icon {
+		margin-bottom: -0.2em;
+		margin-right: 0.2em;
+	}
+
+	.time {
+		span + span {
+			&:before {
+				content: ":";
+			}
+		}
+	}
+}
 .article-header {
   padding: 35px 0;
   text-align: center;
