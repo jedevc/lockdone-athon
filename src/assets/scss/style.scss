@@ -197,10 +197,15 @@
 .countdown {
 	text-align: center;
 	font-size: 5em;
+	font-family: var(--font-family-mono);
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 
 	.icon {
-		margin-bottom: -0.2em;
 		margin-right: 0.2em;
+		padding-top: 0.1em;
 	}
 
 	.time {
@@ -210,6 +215,11 @@
 			}
 		}
 	}
+}
+@media (max-width: $breakpoint-md) {
+  .countdown {
+	flex-direction: column;
+  }
 }
 .article-header {
   padding: 35px 0;

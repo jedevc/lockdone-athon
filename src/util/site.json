@@ -4,6 +4,8 @@
     "titleTemplate": "%s",
     "description": "A week-long creative marathon for UoB students over the Summer",
     "siteUrl": "https://lockd.one",
-    "image": "/assets/stackrole.png"
+    "image": "/assets/stackrole.png",
+    "eventStart": "2020-07-07 20:00+01",
+    "eventEnd": "2020-07-07 22:00+01"
   }
 }

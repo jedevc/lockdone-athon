@@ -4,10 +4,12 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 :root {
 
 	--font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-	--font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+	--font-family-mono: VT323, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   --font-size-small: 12px;
   
   --primary-color: #faab60;
