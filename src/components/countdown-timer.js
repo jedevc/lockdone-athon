@@ -56,7 +56,7 @@ export default function CountdownTimer() {
 
       <span className="time">
         <span className="hours">
-          {diff.hours().toString().padStart(2, "0")}
+          {Math.floor(diff.asHours()).toString().padStart(2, "0")}
         </span>
         <span className="minutes">
           {diff.minutes().toString().padStart(2, "0")}
