@@ -111,7 +111,7 @@
   }
 }
 .home-banner {
-	padding: 60px 0;
+	padding-top: 60px;
 	align-items: center;
 	.title {
 		font-size: 48px;
@@ -139,6 +139,16 @@
 			padding-bottom: 30px;
 		}
 	}
+}
+@media (max-width: $breakpoint-lg) {
+	.home-banner {
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+}
+.content {
+	font-size: 20px;
+	line-height: 1.4;
 }
 .home-posts {
 	.grids {
