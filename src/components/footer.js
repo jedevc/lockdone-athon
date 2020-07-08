@@ -1,11 +1,11 @@
 import React from "react"
 import {Link} from "gatsby"
-import { RiHeart2Line } from "react-icons/ri";
+import { FaHeart } from "react-icons/fa";
 
 const Footer = () => (
   <footer className="site-footer">
     <div className="container">
-      <p>A GatsbyJS Starter for Netlify CMS, Made with <span className="icon -love"><RiHeart2Line/></span> by <Link to="/">Stackrole.com</Link></p>
+      <p>A hackathon built for UoB's <a href="https://intranet.birmingham.ac.uk/eps/lockdone/lockdone.aspx">LOCKDONE</a>, made with <span className="icon -love"><FaHeart/></span> by <Link to="/people">these lovely people</Link></p>
     </div>
   </footer>
 )

@@ -37,6 +37,7 @@
     "gatsby-source-filesystem": "^2.3.3",
     "gatsby-transformer-remark": "^2.8.8",
     "gatsby-transformer-sharp": "^2.5.2",
+    "gatsby-transformer-yaml": "^2.4.9",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
     "prismjs": "^1.20.0",
