@@ -6,6 +6,7 @@ import { RiArrowRightSLine } from "react-icons/ri"
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
 import CountdownTimer from "../components/countdown-timer"
+import EventCalendar from "../components/calendar"
 import SEO from "../components/seo"
 
 export const pageQuery = graphql`
@@ -42,7 +43,7 @@ const HomePage = ({ data }) => {
   const Image = frontmatter.featuredImage ? frontmatter.featuredImage.childImageSharp.fluid : ""
 	return (
 		<Layout>
-      <SEO/>
+      <SEO />
       <div className="home-banner grids col-1 sm-2">
         <div>
           <h1 className="title">{frontmatter.title}</h1>
@@ -61,7 +62,10 @@ const HomePage = ({ data }) => {
         </div>
       </div>
       <CountdownTimer />
-      <div className="content" dangerouslySetInnerHTML={{__html: html}}/>
+      <h1>Brief text about the event</h1>
+      <EventCalendar />
+      <h1>More detailed info</h1>
+      <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
       {/* <BlogListHome /> */}
 		</Layout>
 	)

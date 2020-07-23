@@ -6,6 +6,9 @@
     "siteUrl": "https://lockd.one",
     "image": "/assets/stackrole.png",
     "eventStart": "2020-08-17 12:00+01",
-    "eventEnd": "2020-08-21 12:00+01"
+    "eventEnd": "2020-08-21 12:00+01",
+    "googleCalendarId": "d719a9beo7gnpl2lg9mskdup0c@group.calendar.google.com",
+    "googleCalendarApiKey": "AIzaSyCjk0Fm7cmp1WM2KlcqUzLMXpGJMjijc2s",
+    "googleCalendarEventID": "0hk17absffr8k1j0i3dmln3dvd"
   }
 }
