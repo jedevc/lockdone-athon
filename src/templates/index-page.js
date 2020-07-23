@@ -1,4 +1,5 @@
 import React from "react"
+import Loadable from 'react-loadable'
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { RiArrowRightSLine } from "react-icons/ri"
@@ -6,7 +7,6 @@ import { RiArrowRightSLine } from "react-icons/ri"
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
 import CountdownTimer from "../components/countdown-timer"
-import EventCalendar from "../components/calendar"
 import SEO from "../components/seo"
 
 export const pageQuery = graphql`
@@ -38,6 +38,13 @@ export const pageQuery = graphql`
   }
 `
 
+const LoadableEventCalendar = Loadable({
+  loader: () => import('../components/calendar'),
+  loading() {
+    return <></>
+  },
+})
+
 const HomePage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
@@ -68,7 +75,7 @@ const HomePage = ({ data }) => {
       <p className="summary">{frontmatter.summary}</p>
 
       <div className="calendar">
-        <EventCalendar />
+        <LoadableEventCalendar />
       </div>
 
       <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
