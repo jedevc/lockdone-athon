@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useState } from "react"
+import useSWR, { mutate } from "swr"
 import { graphql, useStaticQuery } from "gatsby"
 import { FaClock } from "react-icons/fa"
 import moment from "moment"
@@ -10,14 +11,44 @@ export default function CountdownTimer() {
         siteMetadata {
           eventStartString: eventStart
           eventEndString: eventEnd
+          googleCalendarId: googleCalendarId
+          googleCalendarApiKey: googleCalendarApiKey
+          googleCalendarEventID: googleCalendarEventID
         }
       }
     }
   `)
 
-  const { eventStartString, eventEndString } = data.site.siteMetadata
-  const eventStart = moment(eventStartString)
-  const eventEnd = moment(eventEndString)
+  const {
+    eventStartString,
+    eventEndString,
+    googleCalendarApiKey,
+    googleCalendarId,
+    googleCalendarEventID,
+  } = data.site.siteMetadata
+
+  const { data: times } = useSWR("event-data", () => {
+    let resp = await fetch(
+      new URL(
+        `https://www.googleapis.com/calendar/v3/calendars/${googleCalendarId}/events/${googleCalendarEventID}?key=${googleCalendarApiKey}`
+      )
+    )
+    if (resp.ok) {
+      let json = await resp.json()
+      return {
+        start: moment(json.start.dateTime),
+        end: moment(json.end.dateTime),
+      }
+    } else {
+      return { start: moment(eventStartString), end: moment(eventEndString) }
+    }
+  }, {
+    initialData: {
+      start: moment(eventStartString),
+      end: moment(eventEndString),
+    },
+    revalidateOnMount: true,
+  })
 
   const [now, setNow] = useState(null)
   useLayoutEffect(() => {
@@ -37,11 +68,11 @@ export default function CountdownTimer() {
 
   let diff
   let text
-  if (now < eventStart) {
-    diff = moment.duration(eventStart.diff(now))
+  if (now < times.start) {
+    diff = moment.duration(times.start.diff(now))
     text = "to start"
-  } else if (now > eventStart && now < eventEnd) {
-    diff = moment.duration(eventEnd.diff(now))
+  } else if (now > times.start && now < times.end) {
+    diff = moment.duration(times.end.diff(now))
     text = "left"
   } else {
     diff = null
