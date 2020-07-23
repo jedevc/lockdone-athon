@@ -18,6 +18,7 @@ export const pageQuery = graphql`
         title
         tagline
         description
+        summary
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 480, maxHeight: 380, quality: 100, srcSetBreakpoints: [960, 1440]) {
@@ -61,11 +62,17 @@ const HomePage = ({ data }) => {
           ) : ""}
         </div>
       </div>
+
       <CountdownTimer />
-      <h1>Brief text about the event</h1>
-      <EventCalendar />
-      <h1>More detailed info</h1>
+
+      <p className="summary">{frontmatter.summary}</p>
+
+      <div className="calendar">
+        <EventCalendar />
+      </div>
+
       <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
+
       {/* <BlogListHome /> */}
 		</Layout>
 	)

@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import FullCalendar from "@fullcalendar/react"
-import dayGridPlugin from "@fullcalendar/daygrid"
+import timeGridPlugin from "@fullcalendar/timegrid"
 import googleCalendarPlugin from "@fullcalendar/google-calendar"
+import moment from "moment"
 
 export default function EventCalendar() {
   const data = useStaticQuery(graphql`
@@ -20,11 +21,17 @@ export default function EventCalendar() {
     googleCalendarIdString,
     googleCalendarApiKeyString,
   } = data.site.siteMetadata
+
+  const initialScrollTime = moment().format("HH:mm:ss")
+
   return (
     <FullCalendar
-      plugins={[dayGridPlugin, googleCalendarPlugin]}
+      plugins={[timeGridPlugin, googleCalendarPlugin]}
       googleCalendarApiKey={googleCalendarApiKeyString}
-      initialView="dayGridMonth"
+      initialView="timeGridWeek"
+      height={500}
+      nowIndicator={true}
+      scrollTime={initialScrollTime}
       eventSources={[
         {
           googleCalendarId: googleCalendarIdString,

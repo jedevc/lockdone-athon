@@ -1,8 +1,12 @@
 import React, { useLayoutEffect, useState } from "react"
-import useSWR, { mutate } from "swr"
+import useSWR from "swr"
 import { graphql, useStaticQuery } from "gatsby"
 import { FaClock } from "react-icons/fa"
 import moment from "moment"
+
+function googleCalendarURL(id, eventId, apiKey) {
+  return new URL(`https://www.googleapis.com/calendar/v3/calendars/${id}/events/${eventId}?key=${apiKey}`)
+}
 
 export default function CountdownTimer() {
   const data = useStaticQuery(graphql`
@@ -27,12 +31,8 @@ export default function CountdownTimer() {
     googleCalendarEventID,
   } = data.site.siteMetadata
 
-  const { data: times } = useSWR("event-data", () => {
-    let resp = await fetch(
-      new URL(
-        `https://www.googleapis.com/calendar/v3/calendars/${googleCalendarId}/events/${googleCalendarEventID}?key=${googleCalendarApiKey}`
-      )
-    )
+  const { data: times } = useSWR("event-data", async () => {
+    let resp = await fetch(googleCalendarURL(googleCalendarId, googleCalendarEventID, googleCalendarApiKey))
     if (resp.ok) {
       let json = await resp.json()
       return {
