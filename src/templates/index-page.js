@@ -2,7 +2,7 @@ import React from "react"
 import Loadable from 'react-loadable'
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import { RiArrowRightSLine } from "react-icons/ri"
+import { FaDiscord } from "react-icons/fa"
 
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
@@ -29,9 +29,8 @@ export const pageQuery = graphql`
             }
           }
         }
-        cta {
-          ctaText
-          ctaLink
+        discord {
+          link
         }
       }
     }
@@ -57,7 +56,10 @@ const HomePage = ({ data }) => {
           <h1 className="title">{frontmatter.title}</h1>
           <p className="tagline">{frontmatter.tagline}</p>
           <div className="description">{frontmatter.description}</div>
-          <Link to={frontmatter.cta.ctaLink} className="button">{frontmatter.cta.ctaText}<span className="icon -right"><RiArrowRightSLine/></span></Link>
+          <a href={frontmatter.discord.link} className="button">
+            Join the Discord
+            <span className="icon -right"><FaDiscord/></span>
+          </a>
         </div>
         <div>
           {Image ? (
