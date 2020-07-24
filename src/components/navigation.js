@@ -12,12 +12,12 @@ const MenuItems = [
     title: "CTF",
   },
   {
-    path: "/people",
-    title: "People"
+    path: "/challenges",
+    title: "Challenges",
   },
   {
-    path: "/about",
-    title: "About"
+    path: "/people",
+    title: "People"
   },
   // {
   //   path: "/blog",

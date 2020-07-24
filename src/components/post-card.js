@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-export default function PostCard({ title, slug, link, date, featuredImage }) {
+export default function PostCard({ title, slug, link, date, featuredImage, children }) {
   let img
   if (featuredImage) {
     img = (
@@ -36,6 +36,8 @@ export default function PostCard({ title, slug, link, date, featuredImage }) {
             <time>{date}</time>
           </p>
         )}
+
+        {children}
       </div>
     </article>
   )
