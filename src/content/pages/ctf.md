@@ -12,11 +12,11 @@ into the event, so keep your eyes peeled!
 ## How it works
 
 - Each team creates an account on the score-tracker and works together to
-solve the challenges there
+  solve the challenges there
 - Each challenge is worth a certain number of points, which can be gained by
-"capturing the flag" for that challenge
+  "capturing the flag" for that challenge
 - The flag will look something like `LOCK{helloworld}`.
-    - Each flag will begin with `LOCK` and then contain curly braces around
+  - Each flag will begin with `LOCK` and then contain curly braces around
     the rest of it
-    - Only the bit in the curly braces will change between flags
+  - Only the bit in the curly braces will change between flags
 - At the end of the CTF, the team with the most points will win!

@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 export const query = graphql`
   query PeopleQuery($id: String!) {
-		markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: { eq: $id }) {
       html
     }
     people: allPeopleYaml {
@@ -29,7 +29,12 @@ export const query = graphql`
 
 export default function PeopleList({ data }) {
   const people = data.people.nodes.map((node, index) => (
-    <PostCard key={index} title={node.name} featuredImage={node.picture} link={node.link} />
+    <PostCard
+      key={index}
+      title={node.name}
+      featuredImage={node.picture}
+      link={node.link}
+    />
   ))
 
   return (

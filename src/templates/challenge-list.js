@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 export const query = graphql`
   query ChallengeQuery($id: String!) {
-		markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: { eq: $id }) {
       html
     }
     challenges: allChallengesYaml {

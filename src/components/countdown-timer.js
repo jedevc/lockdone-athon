@@ -5,7 +5,9 @@ import { FaClock } from "react-icons/fa"
 import moment from "moment"
 
 function googleCalendarURL(id, eventId, apiKey) {
-  return new URL(`https://www.googleapis.com/calendar/v3/calendars/${id}/events/${eventId}?key=${apiKey}`)
+  return new URL(
+    `https://www.googleapis.com/calendar/v3/calendars/${id}/events/${eventId}?key=${apiKey}`
+  )
 }
 
 export default function CountdownTimer() {
@@ -31,24 +33,34 @@ export default function CountdownTimer() {
     googleCalendarEventID,
   } = data.site.siteMetadata
 
-  const { data: times } = useSWR("event-data", async () => {
-    let resp = await fetch(googleCalendarURL(googleCalendarId, googleCalendarEventID, googleCalendarApiKey))
-    if (resp.ok) {
-      let json = await resp.json()
-      return {
-        start: moment(json.start.dateTime),
-        end: moment(json.end.dateTime),
+  const { data: times } = useSWR(
+    "event-data",
+    async () => {
+      let resp = await fetch(
+        googleCalendarURL(
+          googleCalendarId,
+          googleCalendarEventID,
+          googleCalendarApiKey
+        )
+      )
+      if (resp.ok) {
+        let json = await resp.json()
+        return {
+          start: moment(json.start.dateTime),
+          end: moment(json.end.dateTime),
+        }
+      } else {
+        return { start: moment(eventStartString), end: moment(eventEndString) }
       }
-    } else {
-      return { start: moment(eventStartString), end: moment(eventEndString) }
-    }
-  }, {
-    initialData: {
-      start: moment(eventStartString),
-      end: moment(eventEndString),
     },
-    revalidateOnMount: true,
-  })
+    {
+      initialData: {
+        start: moment(eventStartString),
+        end: moment(eventEndString),
+      },
+      revalidateOnMount: true,
+    }
+  )
 
   const [now, setNow] = useState(null)
   useLayoutEffect(() => {

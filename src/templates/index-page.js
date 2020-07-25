@@ -1,6 +1,6 @@
 import React from "react"
-import Loadable from 'react-loadable'
-import { graphql, Link } from "gatsby"
+import Loadable from "react-loadable"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { FaDiscord } from "react-icons/fa"
 
@@ -10,8 +10,8 @@ import CountdownTimer from "../components/countdown-timer"
 import SEO from "../components/seo"
 
 export const pageQuery = graphql`
-  query HomeQuery($id: String!){
-		markdownRemark(id: { eq: $id }) {
+  query HomeQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
@@ -21,7 +21,12 @@ export const pageQuery = graphql`
         summary
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 480, maxHeight: 380, quality: 100, srcSetBreakpoints: [960, 1440]) {
+            fluid(
+              maxWidth: 480
+              maxHeight: 380
+              quality: 100
+              srcSetBreakpoints: [960, 1440]
+            ) {
               ...GatsbyImageSharpFluid
             }
             sizes {
@@ -38,7 +43,7 @@ export const pageQuery = graphql`
 `
 
 const LoadableEventCalendar = Loadable({
-  loader: () => import('../components/calendar'),
+  loader: () => import("../components/calendar"),
   loading() {
     return <></>
   },
@@ -47,9 +52,11 @@ const LoadableEventCalendar = Loadable({
 const HomePage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  const Image = frontmatter.featuredImage ? frontmatter.featuredImage.childImageSharp.fluid : ""
-	return (
-		<Layout>
+  const Image = frontmatter.featuredImage
+    ? frontmatter.featuredImage.childImageSharp.fluid
+    : ""
+  return (
+    <Layout>
       <SEO />
       <div className="home-banner grids col-1 sm-2">
         <div>
@@ -58,17 +65,21 @@ const HomePage = ({ data }) => {
           <div className="description">{frontmatter.description}</div>
           <a href={frontmatter.discord.link} className="button">
             Join the Discord
-            <span className="icon -right"><FaDiscord/></span>
+            <span className="icon -right">
+              <FaDiscord />
+            </span>
           </a>
         </div>
         <div>
           {Image ? (
-            <Img 
-              fluid={Image} 
-              alt={frontmatter.title + ' - Featured image'}
+            <Img
+              fluid={Image}
+              alt={frontmatter.title + " - Featured image"}
               className="featured-image"
             />
-          ) : ""}
+          ) : (
+            ""
+          )}
         </div>
       </div>
 
@@ -83,8 +94,8 @@ const HomePage = ({ data }) => {
       <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
 
       {/* <BlogListHome /> */}
-		</Layout>
-	)
+    </Layout>
+  )
 }
 
 export default HomePage
