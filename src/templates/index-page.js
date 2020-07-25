@@ -18,7 +18,6 @@ export const pageQuery = graphql`
         title
         tagline
         description
-        summary
         featuredImage {
           childImageSharp {
             fluid(
@@ -85,13 +84,11 @@ const HomePage = ({ data }) => {
 
       <CountdownTimer />
 
-      <p className="summary">{frontmatter.summary}</p>
+      <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
 
       <div className="calendar">
         <LoadableEventCalendar />
       </div>
-
-      <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
 
       {/* <BlogListHome /> */}
     </Layout>
