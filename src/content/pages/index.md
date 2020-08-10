@@ -9,7 +9,7 @@ description: >
   Birmingham in Action campaign ✨
 featuredImage: ../assets/lockdone-banner-text.jpg
 discord:
-  link: http://example.com
+  link: false  # link should go here
 ---
 
 ## What is it?
@@ -18,7 +18,6 @@ The LOCKDONE-athon is a week-long creative marathon (inspired by hackathons)
 in which you can learn new skills, build a project that impacts the people
 and communities around you, and get the chance to invent something new with
 like-minded students.
-
 
 ## What can I make?
 
@@ -39,7 +38,7 @@ campaign](https://www.birmingham.ac.uk/birmingham-in-action/index.aspx):
 
 - An education for all
 - Preventing and treating cancer
-- Protecting our planet 
+- Protecting our planet
 - Young people’s mental health
 - Families fleeing war, violence, and famine
 - Those affected by the COVID-19 pandemic
@@ -49,14 +48,14 @@ to take your project in [here](/challenges).
 
 ## How do I get involved?
 
-Getting involved is *super* easy.
+Getting involved is _super_ easy.
 
 First off, you can join our [Discord channel](https://example.com)! If you've
 got questions, you can ask for clarification from the organizers, get
 technical help from mentors, or if you haven't got a team, you can meet other
 students and find a group of people to build something with!
 
-Next, find a team of people you want to work with, and decide on *roughly*
+Next, find a team of people you want to work with, and decide on _roughly_
 what you want to build.
 
 Finally, when the event starts, get together with your team, and start making

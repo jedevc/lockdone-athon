@@ -62,12 +62,14 @@ const HomePage = ({ data }) => {
           <h1 className="title">{frontmatter.title}</h1>
           <p className="tagline">{frontmatter.tagline}</p>
           <div className="description">{frontmatter.description}</div>
-          <a href={frontmatter.discord.link} className="button">
-            Join the Discord
-            <span className="icon -right">
-              <FaDiscord />
-            </span>
-          </a>
+          {frontmatter.discord.link && (
+            <a href={frontmatter.discord.link} className="button">
+              Join the Discord
+              <span className="icon -right">
+                <FaDiscord />
+              </span>
+            </a>
+          )}
         </div>
         <div>
           {Image ? (
