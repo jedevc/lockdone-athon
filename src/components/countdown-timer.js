@@ -17,7 +17,7 @@ export default function CountdownTimer() {
         siteMetadata {
           eventStartString: eventStart
           eventEndString: eventEnd
-          googleCalendarId: googleCalendarId
+          googleCalendarId: countdownCalendarId
           googleCalendarApiKey: googleCalendarApiKey
           googleCalendarEventID: googleCalendarEventID
         }
