@@ -50,7 +50,7 @@ to take your project in [here](/challenges).
 
 Getting involved is _super_ easy.
 
-First off, you can join our [Discord channel](https://example.com)! If you've
+First off, you can join our [Discord channel](https://discord.gg/hRZbjWV)! If you've
 got questions, you can ask for clarification from the organizers, get
 technical help from mentors, or if you haven't got a team, you can meet other
 students and find a group of people to build something with!
