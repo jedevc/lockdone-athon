@@ -9,7 +9,7 @@ description: >
   Birmingham in Action campaign ✨
 featuredImage: ../assets/lockdone-banner-text.jpg
 discord:
-  link: false  # link should go here
+  link: https://discord.gg/hRZbjWV
 ---
 
 ## What is it?
