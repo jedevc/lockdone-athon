@@ -28,8 +28,7 @@ think of; the sky's the limit! As long as it's a "thing" that you've made,
 that counts!
 
 At the end of the week though, you'll get the chance to show off your project
-and see what everyone else has gotten up to as well. After a judging period,
-the best projects in their categories will be awarded prizes 😮
+and see what everyone else has gotten up to as well 😮
 
 ## What are the categories?
 
