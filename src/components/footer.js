@@ -6,7 +6,7 @@ const Footer = () => (
   <footer className="site-footer">
     <div className="container">
       <p>
-        A hackathon built for UoB's{" "}
+        A hackathon and CTF built for UoB's{" "}
         <a href="https://intranet.birmingham.ac.uk/eps/lockdone/lockdone.aspx">
           LOCKDONE
         </a>
