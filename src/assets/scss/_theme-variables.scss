@@ -12,14 +12,16 @@ $breakpoint-xl: 1200px;
 	--font-family-mono: VT323, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   --font-size-small: 12px;
   
-  --primary-color: #faab60;
-  --header-bg: #faab60;
+  --primary-color: #fc871d;
+  --header-bg: #fc871d;
+  --accent-light: #feaf6d;
+  --accent-dark: #fc6701;
 
-  --home-link-color: #A1613F;
+  --home-link-color: var(--accent-dark);
   --home-link-hover-color:  var(--primary-color);
 
   --button-color: #fff;
-  --button-alternate-color: #faab60;
+  --button-alternate-color: #fc871d;
 
   --post-link-color: #0F070B;
 
