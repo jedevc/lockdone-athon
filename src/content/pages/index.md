@@ -14,10 +14,13 @@ discord:
 
 ## What is it?
 
-The LOCKDONE-athon is a week-long creative marathon (inspired by hackathons)
-in which you can learn new skills, build a project that impacts the people
-and communities around you, and get the chance to invent something new with
-like-minded students.
+The LOCKDONE-athon is both a week-long creative marathon (inspired by
+hackathons) and a week-long cybersecurity Capture the Flag event, in which you
+can learn new skills, build a project that impacts the people and communities
+around you, and get the chance to invent something new with like-minded
+students. Keep on reading below to find out more about the hackathon, or head
+over to the [LOCKDONE Capture the Flag](/ctf) page to learn about the CTF!
+The events start a few days apart, so you can take part in both!
 
 ## What can I make?
 
@@ -66,7 +69,7 @@ The event starts on the 17th of August, and we've got all sorts of different
 workshops and learning sessions planned, so that you can build the best
 possible project.
 
-The [Capture the Flag competition](/ctf) will start a few days into the
-event, so you get a chance to get started with your project.
+The [Capture the Flag competition](/ctf) will start on 19th of August, so you
+have time to start your project!
 
 You can find out more about the exact details in the calendar below:
