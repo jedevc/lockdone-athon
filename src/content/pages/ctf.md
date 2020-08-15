@@ -62,9 +62,9 @@ CTFs are all about 'flags' and 'challenges'. A 'challenge' is a puzzle you have
 to solve, when you solve it you get a 'flag', then you put the flag into the
 scoreboard website to prove you solved the puzzle and your team gets points!
 
-A flag is a piece of text that looks like this: **LOCK{this_1s_4_fl4g}**. It
-ALWAYS starts with *"LOCK{"*, then has a phrase, with spaces replaced with
-underscores and some vowels with numbers and finally another *}*.
+A flag is a piece of text that looks like this: `LOCK{this_1s_4_fl4g}`. It
+ALWAYS starts with `LOCK{`, then has a phrase, with spaces replaced with
+underscores and some vowels with numbers and finally another `}`.
 
 Every challenge will have a flag that looks like that hidden somewhere in it,
 it could be encrypted or hidden in a website or an image, and you have to
