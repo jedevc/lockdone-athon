@@ -12,8 +12,9 @@ const MenuItems = [
     title: "Challenges",
   },
   {
-    path: "/ctf",
+    path: "https://ctf.lockd.one",
     title: "CTF",
+    absolute: true,
   },
   {
     path: "/people",
@@ -25,11 +26,21 @@ const MenuItems = [
   // },
 ]
 
-const ListLink = props => (
-  <li>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
+const ListLink = props => {
+  if (props.absolute) {
+    return (
+      <li>
+        <a href={props.to}>{props.children}</a>
+      </li>
+    )
+  } else {
+    return (
+      <li>
+        <Link to={props.to}>{props.children}</Link>
+      </li>
+    )
+  }
+}
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -47,7 +58,7 @@ class Navigation extends React.Component {
 
   render() {
     const listMenuItems = MenuItems.map((menuItem, index) => (
-      <ListLink key={index} to={menuItem.path}>
+      <ListLink key={index} to={menuItem.path} absolute={menuItem.absolute}>
         {menuItem.title}
       </ListLink>
     ))
