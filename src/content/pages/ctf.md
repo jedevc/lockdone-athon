@@ -15,7 +15,7 @@ introduce other people to the world of cyber-security and puzzles.
 The CTF will run from Wednesday, 19th of August, 12PM, until 26th of August,
 12PM.
 
-Website URL **to be announced**
+Website URL: [ctf.lockd.one](https://ctf.lockd.one)
 
 Meanwhile, join the [Discord
 channel](https://discord.gg/hRZbjWV), and say hi! Any of the people with the
