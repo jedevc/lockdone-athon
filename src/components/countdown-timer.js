@@ -98,15 +98,19 @@ export default function CountdownTimer() {
       </span>
 
       <span className="time">
-        <span className="hours">
-          {Math.floor(diff.asHours()).toString().padStart(2, "0")}
-        </span>
-        <span className="minutes">
-          {diff.minutes().toString().padStart(2, "0")}
-        </span>
-        <span className="seconds">
-          {diff.seconds().toString().padStart(2, "0")}
-        </span>
+        {diff && (
+          <>
+            <span className="hours">
+              {Math.floor(diff.asHours()).toString().padStart(2, "0")}
+            </span>
+            <span className="minutes">
+              {diff.minutes().toString().padStart(2, "0")}
+            </span>
+            <span className="seconds">
+              {diff.seconds().toString().padStart(2, "0")}
+            </span>
+          </>
+        )}
         {" " + text}
       </span>
     </div>
