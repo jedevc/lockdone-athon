@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/ctf"
-  to = "https://ctf.lockd.one"
-  status = 301
-  force = true

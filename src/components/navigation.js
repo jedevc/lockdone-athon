@@ -12,9 +12,8 @@ const MenuItems = [
     title: "Challenges",
   },
   {
-    path: "https://ctf.lockd.one",
+    path: "/ctf",
     title: "CTF",
-    absolute: true,
   },
   {
     path: "/people",
